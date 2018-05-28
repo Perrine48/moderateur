@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Modérateur</title>
+    </head>
+    <body>
+        <form>
+            <textarea id="text"></textarea>
+            <button type="submit" id="btn">Modérer</button>
+        </form>
+
+        <script>
+        var contentElmt = document.getElementById("text");
+        var contentVal = contentElmt.value;
+        var btn = document.getElementById("btn");
+
+        btn.addEventListener("click", moderator);
+
+        function moderator (){
+            var score = /:)/gi;
+            var newtxt = contentVal.replace(score, --);
+            alert(newtxt);
+        };
+        </script>
+    </body>
+</html>
