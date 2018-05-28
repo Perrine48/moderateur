@@ -7,31 +7,29 @@
     <body>
         <form>
             <textarea id="text"></textarea>
-            <button type="submit" id="btn">Modérer</button>
+            <button type="button" id="btn">Modérer</button>
         </form>
         <div id="div1">
             <h3>Résultat</h3>
-            <p id="p_resultat">
-                
-            </p>
+
         </div>
         <script>
         var contentElmt = document.getElementById("text");
 
         var btn = document.getElementById("btn");
 
-        var p1 = document.getElementById('p_resultat')
-
-        p1.style.backgroundColor = "grey";
+        var newDiv = document.getElementById("div1");
 
         btn.addEventListener("click", moderator);
 
         function moderator (){
             var contentVal = contentElmt.value;
             var smilleyChg = contentVal.replace(":)", "--");
-
-            alert(smilleyChg);
+            var newP = document.createElement("p");
+            newDiv.appendChild(newP);
+            newP.innerText = smilleyChg;
         };
+
         </script>
     </body>
 </html>
